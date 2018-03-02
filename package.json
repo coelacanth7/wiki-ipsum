@@ -1,0 +1,28 @@
+{
+  "name": "wiki-ipsum",
+  "version": "1.0.0",
+  "description": "A lorem ipsum generator that uses random wikipedia article text",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coelacanth7/wiki-ipsum.git"
+  },
+  "keywords": [
+    "lorem",
+    "ipsum",
+    "generator",
+    "wikipedia"
+  ],
+  "author": "Gregory Alford coelacanth7",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coelacanth7/wiki-ipsum/issues"
+  },
+  "homepage": "https://github.com/coelacanth7/wiki-ipsum#readme",
+  "dependencies": {
+    "got": "^8.2.0"
+  }
+}
