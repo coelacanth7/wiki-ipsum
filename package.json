@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/coelacanth7/wiki-ipsum#readme",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
     "got": "^8.2.0"
   }
 }
