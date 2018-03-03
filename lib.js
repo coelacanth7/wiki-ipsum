@@ -31,7 +31,7 @@ async function getWikiText() {
 		const apiJson = await got(`${baseQuery}${articleTitle}`);
 		const parsedText = JSON.parse(apiJson.body).query.pages;
 		const text = Object.values(parsedText)[0].extract.replace(/^\s+|\s+$/g, "");
-		return text;
+		return text.replace(/\s\s/g, "");
 	} catch (error) {
 		console.error(error);
 		return false;
