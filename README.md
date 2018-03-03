@@ -21,7 +21,7 @@ wikiIpsum().then(text => {
 	// footballer. He currently plays for the Maltese Premier League side
 	// Birkirkara, where he plays mainly as a wing back. He also works as a
 	// teacher at De La Salle College, where he teaches pure
-	// mathematics.Policy monitoring comprises a range of activities
+	// mathematics. Policy monitoring comprises a range of activities
 	// describing and analyzing the development and implementation of
 	// policies, identifying potential gaps in the process, outlining areas
 	// or improvement, and holding policy implementers accountable for
