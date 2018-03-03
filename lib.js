@@ -13,11 +13,11 @@ async function wikiIpsum(max) {
 	while (WordCount(str) < maxWords) {
 		await getWikiText()
 			.then(wikiText => {
-				str += "" + wikiText;
+				str += " " + wikiText;
 			})
 			.catch(err => {
 				console.error(err);
-				return err;
+				return "connection issue";
 			});
 	}
 
