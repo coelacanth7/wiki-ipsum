@@ -31,7 +31,11 @@ wikiIpsum().then(text => {
 // an optional word length parameter can be supplied:
 wikiIpsum(40).then(text => {
 	console.log(text);
-	// The Liberty Bank (Georgian: ლიბერთი ბანკი, libert'i banki), formerly the People's Bank of Georgia (Georgian: საქართველოს სახალხო ბანკი, sak'art'velos sakhalkho banki) is private bank in Georgia, the seventh largest in the country by total assets with 3.4% market share. It has the largest network of branches in Georgia.
+	// The Liberty Bank (Georgian: ლიბერთი ბანკი, libert'i banki), formerly
+	// the People's Bank of Georgia (Georgian: საქართველოს სახალხო ბანკი,
+	// sak'art'velos sakhalkho banki) is private bank in Georgia, the seventh
+	// largest in the country by total assets with 3.4% market share. It has
+	// the largest network of branches in Georgia.
 });
 ```
 
