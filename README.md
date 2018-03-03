@@ -17,7 +17,15 @@ const wikiIpsum = require("wiki-ipsum");
 
 wikiIpsum().then(text => {
 	console.log(text);
-	// Edward Herrera (born 14 November 1986 in Pietà, Malta) is a Maltese footballer. He currently plays for the Maltese Premier League side Birkirkara, where he plays mainly as a wing back. He also works as a teacher at De La Salle College, where he teaches pure mathematics.Policy monitoring comprises a range of activities describing and analyzing the development and implementation of policies, identifying potential gaps in the process, outlining areas for improvement, and holding policy implementers accountable for their activities
+	// Edward Herrera (born 14 November 1986 in Pietà, Malta) is a Maltese
+	// footballer. He currently plays for the Maltese Premier League side
+	// Birkirkara, where he plays mainly as a wing back. He also works as a
+	// teacher at De La Salle College, where he teaches pure
+	// mathematics.Policy monitoring comprises a range of activities
+	// describing and analyzing the development and implementation of
+	// policies, identifying potential gaps in the process, outlining areas
+	// or improvement, and holding policy implementers accountable for
+	// their activities
 });
 
 // an optional word length parameter can be supplied:
