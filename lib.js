@@ -11,14 +11,15 @@ async function wikiIpsum(max) {
 	let maxWords = max || 200;
 
 	while (WordCount(str) < maxWords) {
-		await getWikiText()
-			.then(wikiText => {
-				str += " " + wikiText;
-			})
-			.catch(err => {
-				console.error(err);
-				return "connection issue";
-			});
+		let result;
+		try {
+			result = await getWikiText();
+		} catch (err) {
+			console.error(error);
+			result = false;
+		}
+		if (!result) break;
+		str += " " + result;
 	}
 
 	if (max) {
@@ -52,12 +53,12 @@ function getWikiText() {
 				})
 				.catch(err => {
 					console.error(err);
-					return " connection error";
+					return false;
 				});
 		})
 		.catch(err => {
 			console.error(err);
-			return " connection error";
+			return false;
 		});
 }
 
