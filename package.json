@@ -13,7 +13,7 @@
 	},
 	"keywords": ["lorem", "ipsum", "generator", "wikipedia"],
 	"author": "Gregory Alford coelacanth7",
-	"license": "ISC",
+	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/coelacanth7/wiki-ipsum/issues"
 	},
