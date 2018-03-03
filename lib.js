@@ -29,8 +29,8 @@ async function getWikiText() {
 		const response = await got("http://en.wikipedia.org/wiki/Special:Random");
 		const articleTitle = response.url.substring(30);
 		const apiJson = await got(`${baseQuery}${articleTitle}`);
-		const parsedText = JSON.parse(apiJson.body).query.pages;
-		const text = Object.values(parsedText)[0].extract.replace(/^\s+|\s+$/g, "");
+		const parsed = JSON.parse(apiJson.body).query.pages;
+		const text = Object.values(parsed)[0].extract.replace(/^\s+|\s+$/g, "");
 		return text.replace(/\s\s/g, "");
 	} catch (error) {
 		console.error(error);
