@@ -3,14 +3,24 @@ const got = require("got");
 const baseQuery =
 	"https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=";
 
-// wikiIpsum
-async function wikiIpsum() {
-	var str = "";
+const WordCount = str => str.split(" ").length;
 
-	while (str.length < 1000) {
+// wikiIpsum
+async function wikiIpsum(max) {
+	let str = "";
+	let maxWords = max || 200;
+
+	while (WordCount(str) < maxWords) {
 		await getWikiText().then(wikiText => {
 			str += "" + wikiText;
 		});
+	}
+
+	if (max) {
+		str
+			.split(" ")
+			.slice(0, maxWords)
+			.join(" ");
 	}
 
 	return str;
@@ -33,8 +43,6 @@ function getWikiText() {
 						""
 					);
 
-					// str += "" + text;
-					// wikiIpsum(str);
 					return text;
 				})
 				.catch(err => {
@@ -46,5 +54,5 @@ function getWikiText() {
 		});
 }
 
-wikiIpsum().then(str => console.log(str));
+// wikiIpsum().then(str => console.log(str));
 // getWikiText().then(text => console.log(text));
