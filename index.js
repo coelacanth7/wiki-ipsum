@@ -3,19 +3,29 @@ const got = require("got");
 const baseQuery =
 	"https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=";
 
-function wikiIpsum(wikiText) {
-	var str = wikiText || "";
-	if (str.length > 1000) {
-		console.log(str);
-		return str;
+// wikiIpsum
+async function wikiIpsum() {
+	var str = "";
+
+	while (str.length < 1000) {
+		await getWikiText().then(wikiText => {
+			str += "" + wikiText;
+		});
 	}
 
-	got("http://en.wikipedia.org/wiki/Special:Random")
+	return str;
+}
+
+function getWikiText() {
+	return got("http://en.wikipedia.org/wiki/Special:Random")
 		.then(res => {
+			// get a random useful wikipedia page
 			return res.url.substring(30);
 		})
 		.then(title => {
-			got(`${baseQuery}${title}`)
+			// use random page to get clean text
+			// normal wikipedia text is cluttered
+			return got(`${baseQuery}${title}`)
 				.then(json => {
 					let obj = JSON.parse(json.body);
 					let text = Object.values(obj.query.pages)[0].extract.replace(
@@ -23,12 +33,9 @@ function wikiIpsum(wikiText) {
 						""
 					);
 
-					if (text.length < 10) {
-						wikiIpsum(str);
-					} else {
-						str += "" + text;
-						wikiIpsum(str);
-					}
+					// str += "" + text;
+					// wikiIpsum(str);
+					return text;
 				})
 				.catch(err => {
 					console.error(err);
@@ -39,4 +46,5 @@ function wikiIpsum(wikiText) {
 		});
 }
 
-let str = wikiIpsum();
+wikiIpsum().then(str => console.log(str));
+// getWikiText().then(text => console.log(text));
