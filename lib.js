@@ -12,7 +12,7 @@ async function wikiIpsum(max) {
 		let result;
 		try {
 			result = await getWikiText();
-		} catch (err) {
+		} catch (error) {
 			console.error(error);
 			result = false;
 		}
@@ -21,7 +21,7 @@ async function wikiIpsum(max) {
 	}
 
 	if (max) str.split(" ").slice(0, maxWords).join(" ");
-	return str;
+	return str.trim();
 }
 
 async function getWikiText() {
