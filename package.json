@@ -1,6 +1,6 @@
 {
 	"name": "wiki-ipsum",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "A lorem ipsum generator that uses random wikipedia article text",
 	"main": "index.js",
 	"scripts": {
