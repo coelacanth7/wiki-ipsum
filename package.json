@@ -23,6 +23,6 @@
 	},
 	"homepage": "https://github.com/coelacanth7/wiki-ipsum#readme",
 	"dependencies": {
-		"got": "^8.2.0"
+		"async-request": "^1.2.0"
 	}
 }
