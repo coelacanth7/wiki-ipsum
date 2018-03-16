@@ -3,6 +3,8 @@ let request = require("async-request"),
 
 const baseQuery =
 	"https://en.wikipedia.org/w/api.php?format=json&origin=*&action=query&prop=extracts&exintro=&explaintext=&titles=";
+const titles =
+	"https://en.wikipedia.org/w/api.php?action=query&list=random&rnlimit=1&format=json&origin=*";
 
 const WordCount = str => str.split(" ").length;
 
@@ -32,9 +34,7 @@ async function wikiIpsum(max) {
 
 async function getWikiText() {
 	try {
-		response = await request(
-			"https://en.wikipedia.org/w/api.php?action=query&list=random&rnlimit=1&format=json&origin=*"
-		);
+		response = await request(titles);
 		let articleTitle = JSON.parse(response.body).query.random[0].title;
 		if (!articleTitle) return "";
 		const apiJson = await request(`${baseQuery}${articleTitle}`);
