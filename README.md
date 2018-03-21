@@ -4,6 +4,10 @@
 
 For longer Ipsums, many requests must be made to wikipedia which could slow down your application
 
+## Get text without any code
+
+https://wiki-ipsum.herokuapp.com/
+
 ## API
 
 ```
