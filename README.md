@@ -31,8 +31,9 @@ wikiIpsum().then(text => {
 // policies, identifying potential gaps in the process, outlining areas
 // or improvement, and holding policy implementers accountable for
 // their activities
-// an optional word length parameter can be supplied:
 
+
+// an optional word length parameter can be supplied:
 wikiIpsum(40).then(text => {
 	console.log(text);
 });
